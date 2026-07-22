@@ -40,7 +40,7 @@ def cleaning_dataset():
         )
     duplicate_filter = duplicate.query("std >= 1")
     ids_duplicated = duplicate_filter.index
-    df_filtered_2 = df_filtered_2.query("molecule_chembl_id not in @ids_duplicated").copy()
+    df_filtered_2 = df_filtered_2[~df_filtered_2['molecule_chembl_id'].isin(ids_duplicated)].copy()
     
     # Aggregation of duplicate and computation to obtain the mean pIC50 on them
     columns_list = ['activity_id', 'activity_properties', 'assay_chembl_id', 'assay_description', 'assay_type', 'bao_endpoint', 'bao_format', 'bao_label', 'canonical_smiles', 'document_chembl_id',

@@ -1,3 +1,12 @@
+---
+title: toxpredict-mlflow
+emoji: 🏢
+colorFrom: pink
+colorTo: purple
+sdk: docker
+pinned: false
+---
+
 # ToxPredict-hERG
 
 > Machine learning pipeline for hERG cardiotoxicity prediction from molecular structures.
